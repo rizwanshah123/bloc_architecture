@@ -1,3 +1,4 @@
+import 'package:bloc_example/presentation/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../logic/cubit/counter_cubit.dart';
@@ -5,13 +6,15 @@ import '../component/circular_button.dart';
 
 class HomePage extends StatelessWidget {
   final String title;
- final Color color;
-  const HomePage({Key? key,required this.title,required this.color}) : super(key: key);
+  final Color color;
+  const HomePage({Key? key, required this.title, required this.color})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('COunter APp')),
+        backgroundColor: color,
+        appBar: AppBar(title: Text(title)),
         body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           BlocConsumer<CounterCubit, CounterState>(
             listener: (context, state) {
@@ -53,6 +56,18 @@ class HomePage extends StatelessWidget {
                 },
               ),
             ],
+          ),
+          MaterialButton(
+            onPressed: () {
+              Navigator.pushNamed(context, RouteNames.secondScreen);
+            },
+            child: const Text('Second Screen'),
+          ),
+          MaterialButton(
+            onPressed: () {
+              Navigator.pushNamed(context, RouteNames.thirdScreen);
+            },
+            child: const Text('Third Screen'),
           )
         ]));
   }

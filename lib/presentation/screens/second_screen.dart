@@ -11,7 +11,8 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('COunter APp')),
+       backgroundColor: color,
+        appBar: AppBar(title:  Text(title)),
         body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           BlocConsumer<CounterCubit, CounterState>(
             listener: (context, state) {

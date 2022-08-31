@@ -1,4 +1,5 @@
 import 'package:bloc_example/presentation/routes/app_route.dart';
+import 'package:bloc_example/presentation/routes/routes_name.dart';
 import 'package:bloc_example/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,19 +16,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<CounterCubit>(
-      lazy: false,
+    return BlocProvider(
       create: (context) => CounterCubit(),
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-       onGenerateRoute: AppRoute.onGenerateRoute,
+        onGenerateRoute: AppRoute.onGenerateRoute,
+        initialRoute: RouteNames.homeSreen,
       ),
     );
   }
 }
-
-
-

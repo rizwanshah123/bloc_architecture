@@ -1,3 +1,4 @@
+import 'package:bloc_example/logic/cubit/counter_cubit.dart';
 import 'package:bloc_example/presentation/routes/routes_name.dart';
 import 'package:bloc_example/presentation/screens/home_screen.dart';
 import 'package:bloc_example/presentation/screens/second_screen.dart';
@@ -19,11 +20,12 @@ class AppRoute {
       case RouteNames.thirdScreen:
         return MaterialPageRoute(
             builder: (_) => const ThirdScreen(
-                title: 'ThirdScreen Screen', color: Colors.blueAccent));
+                title: 'ThirdScreen Screen', color: Colors.greenAccent));
       default:
-        return MaterialPageRoute(builder: (_) => const Scaffold(
-          body: Center(child: Text('No Route Found')),
-        ));
+        return MaterialPageRoute(
+            builder: (_) => const Scaffold(
+                  body: Center(child: Text('No Route Found')),
+                ));
     }
   }
 }
