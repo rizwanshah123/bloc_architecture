@@ -11,8 +11,8 @@ class ThirdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color,
-        appBar: AppBar(title:  Text(title)),
+        appBar: AppBar(title:  Text(title),
+        backgroundColor:color),
         body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           BlocConsumer<CounterCubit, CounterState>(
             listener: (context, state) {
