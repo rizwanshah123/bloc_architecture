@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../logic/cubit/counter_cubit.dart';
+import '../../logic/cubit/counter_state.dart';
 import '../component/circular_button.dart';
 
 class SecondScreen extends StatelessWidget {
@@ -35,27 +36,27 @@ class SecondScreen extends StatelessWidget {
               );
             },
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Button(
-                icon: Icons.minimize,
-                onTap: () {
-                  BlocProvider.of<CounterCubit>(context).decrement(context);
-                },
-              ),
-              const SizedBox(
-                width: 100,
-              ),
-              Button(
-                icon: Icons.add,
-                onTap: () {
-                  BlocProvider.of<CounterCubit>(context).increment(context);
-                },
-              ),
-            ],
-          )
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   crossAxisAlignment: CrossAxisAlignment.center,
+          //   children: [
+          //     Button(
+          //       icon: Icons.minimize,
+          //       onTap: () {
+          //         BlocProvider.of<CounterCubit>(context).decrement();
+          //       },
+          //     ),
+          //     const SizedBox(
+          //       width: 100,
+          //     ),
+          //     Button(
+          //       icon: Icons.add,
+          //       onTap: () {
+          //         BlocProvider.of<CounterCubit>(context).increment();
+          //       },
+          //     ),
+          //   ],
+          // )
         ]));
   }
 }
